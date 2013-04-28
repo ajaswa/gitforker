@@ -16,7 +16,7 @@ Using images for "Fork me on GitHub" is lame.
     Default: `right`
   - `bg` -
     Background color of the banner.
-    Deafult: '#121520'
+    Deafult: `#121520`
   - `fg` -
     Foreground color of the banner.
-    Deafult: '#ffffff'
+    Deafult: `#eeeeee`
