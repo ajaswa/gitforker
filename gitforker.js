@@ -22,9 +22,50 @@
         a = d.createElement('a'),
         s = d.createElement('span'),
         text = d.createTextNode('Fork me on GitHub'),
-        styleA = "-webkit-transform: rotate(45deg);-o-transform: rotate(45deg);-moz-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);position: fixed;top: 50px;right: -50px;padding: 2px 0;display: block;background-color: blue;text-decoration: none;color: white;font-family: Geneva, Tahoma, Verdana, sans-serif;font-size: 16px;",
-        styleS = "display: block;height: 30px;line-height: 30px;width: 240px;border-top: 1px dashed white;border-bottom: 1px dashed white;padding: 0 0px;text-align: center;";
-    
+        styleA = '',
+        styleB = '',
+        position = '',
+        bg = qs['bg'] || '#121520',
+        fg = qs['fg'] || '#eeeeee',
+        orentation = qs['orentation'] || 'right';
+    if (!qs['url']) {
+      return;
+    }
+    if (orentation === 'right') {
+      rotate = '45deg';
+      position = 'right: -50px;';
+    } else {
+      rotate = '-45deg';
+      position = 'left: -50px;';
+    }
+
+    styleA = "-webkit-transform: rotate("+rotate+");"+
+              "-o-transform: rotate("+rotate+");"+
+              "-moz-transform: rotate("+rotate+");"+
+              "-ms-transform: rotate("+rotate+");"+
+              "transform: rotate("+rotate+");"+
+              "position: fixed;"+
+              "top: 50px;"+
+              position+
+              "padding: 2px 0;"+
+              "display: block;"+
+              "background-color: "+bg+";"+
+              "text-decoration: none;"+
+              "color: "+fg+";"+
+              "font-family: Geneva, Tahoma, Verdana, sans-serif;"+
+              "font-size: 16px;"+
+              "-moz-box-shadow: 0px 0px 5px "+bg+";"+
+              "-webkit-box-shadow: 0px 0px 5px "+bg+";"+
+              "box-shadow: 0px 0px 5px "+bg+";",
+    styleS = "display: block;"+
+              "height: 30px;"+
+              "line-height: 30px;"+
+              "width: 240px;"+
+              "border-top: 1px dashed "+fg+";"+
+              "border-bottom: 1px dashed "+fg+";"+
+              "padding: 0 0px;"+
+              "text-align: center;";
+
     s.setAttribute('style', styleS);
     a.setAttribute('style', styleA);
     a.setAttribute('href', qs['url']);
