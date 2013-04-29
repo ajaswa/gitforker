@@ -1,3 +1,9 @@
+/* gitforker
+ * v0.0.1
+ *
+ * Adding "Fork me on GitHub" to your site without images.
+ */
+
 (function (window) {
   function getQueryStrings(url) { 
     var assoc  = {},
@@ -27,11 +33,11 @@
         position = '',
         bg = qs['bg'] || '#121520',
         fg = qs['fg'] || '#eeeeee',
-        orentation = qs['orentation'] || 'right';
+        orientation = qs['orientation'] || 'left';
     if (!qs['url']) {
       return;
     }
-    if (orentation === 'right') {
+    if (orientation === 'right') {
       rotate = '45deg';
       position = 'right: -50px;';
     } else {

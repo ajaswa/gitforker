@@ -11,9 +11,9 @@ Using images for "Fork me on GitHub" is lame.
   - `url` -
     Full url of your GitHub Repo.
     Required.
-  - `orentation` -
+  - `orientation` -
     Places the banner on the left or right of the screen.
-    Default: `right`
+    Default: `left`
   - `bg` -
     Background color of the banner.
     Deafult: `#121520`
