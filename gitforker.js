@@ -4,7 +4,7 @@
  * Adding "Fork me on GitHub" to your site without images.
  */
 
-(function (window) {
+(function () {
   function getQueryStrings(url) { 
     var assoc  = {},
         decode = function (s) { return decodeURIComponent(s.replace(/\+/g, " ")); },
@@ -19,8 +19,20 @@
     } 
 
     return assoc; 
+  };
+  function setOrientation(orientation) {
+    var or = {};
+    if (orientation === 'right') {
+      or['r'] = '45deg';
+      or['p'] = 'right: -50px;';
+    } else {
+      or['r'] = '-45deg';
+      or['p'] = 'left: -50px;';
+    }
+    return or;
   }
-  function go() {
+
+  (function () {
     var d = document,
         body = d.getElementsByTagName('body')[0],
         url = d.getElementById('gitforker').getAttribute('src'),
@@ -30,29 +42,21 @@
         text = d.createTextNode('Fork me on GitHub'),
         styleA = '',
         styleB = '',
-        position = '',
         bg = qs['bg'] || '#121520',
         fg = qs['fg'] || '#eeeeee',
-        orientation = qs['orientation'] || 'left';
+        or = setOrientation(qs['orientation'] || 'left');
     if (!qs['url']) {
       return;
     }
-    if (orientation === 'right') {
-      rotate = '45deg';
-      position = 'right: -50px;';
-    } else {
-      rotate = '-45deg';
-      position = 'left: -50px;';
-    }
 
-    styleA = "-webkit-transform: rotate("+rotate+");"+
-              "-o-transform: rotate("+rotate+");"+
-              "-moz-transform: rotate("+rotate+");"+
-              "-ms-transform: rotate("+rotate+");"+
-              "transform: rotate("+rotate+");"+
+    styleA = "-webkit-transform: rotate("+or['r']+");"+
+              "-o-transform: rotate("+or['r']+");"+
+              "-moz-transform: rotate("+or['r']+");"+
+              "-ms-transform: rotate("+or['r']+");"+
+              "transform: rotate("+or['r']+");"+
               "position: fixed;"+
               "top: 50px;"+
-              position+
+              or['p']+
               "padding: 2px 0;"+
               "display: block;"+
               "background-color: "+bg+";"+
@@ -79,7 +83,6 @@
     s.appendChild(text);
     a.appendChild(s);
     body.appendChild(a);
-  }
-  go();
+  })();
 
-})(window, document)
+})()
