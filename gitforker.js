@@ -33,10 +33,13 @@
   }
 
   (function () {
+    var qs = getQueryStrings(url);
+    if (!qs['url']) {
+      return;
+    }
     var d = document,
         body = d.getElementsByTagName('body')[0],
         url = d.getElementById('gitforker').getAttribute('src'),
-        qs = getQueryStrings(url);
         a = d.createElement('a'),
         s = d.createElement('span'),
         text = d.createTextNode('Fork me on GitHub'),
@@ -45,9 +48,6 @@
         bg = qs['bg'] || '#121520',
         fg = qs['fg'] || '#eeeeee',
         or = setOrientation(qs['orientation'] || 'left');
-    if (!qs['url']) {
-      return;
-    }
 
     styleA = "-webkit-transform: rotate("+or['r']+");"+
               "-o-transform: rotate("+or['r']+");"+
