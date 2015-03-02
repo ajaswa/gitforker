@@ -2,9 +2,12 @@
 
 Using images for "Fork me on GitHub" is lame.
 
+![image](gitforker.png)
+
+
 ## Use
 
-    <script id="gitforker" src='gitforker.js?url=http://example.com'></script>
+    <script id="gitforker" src='gitforker.js?url=https://github.com/ajaswa/gitforker'></script>
 
 ### Options
 
