@@ -1,5 +1,5 @@
 /* gitforker
- * v0.0.4
+ * v0.0.5
  * Copyright 2013-2015 Andrew Jaswa
  * Adding "Fork me on GitHub" to your site without images.
  */
