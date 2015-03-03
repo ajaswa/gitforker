@@ -32,7 +32,7 @@ Using images for "Fork me on GitHub" is lame.
 
 I always thought that using images for some things was kinda silly. The "Fork me on GitHub" ribbon seemed like a great canididate for using pure CSS with a lighter footprint.
 
-Grabing the "black" ribbon from the [GitHub ribbons page](https://github.com/blog/273-github-ribbons), the image is 7,327 bytes (when it's run though [ImageOptim](https://imageoptim.com/) it's 4,665 bytes (compress all the images!)). By comparison gitforker.js uncompressed is 1,850 bytes, over 2.7kb smaller. Compressed it is 872 bytes! Over 3.7kb smaller than the compressed image! And there is room for improvement in file size.
+Grabing the "black" ribbon from the [GitHub ribbons page](https://github.com/blog/273-github-ribbons), the image is 7,327 bytes (when it's run though [ImageOptim](https://imageoptim.com/) it's 4,665 bytes (compress all the images!)). By comparison gitforker.js uncompressed is 1,809 bytes, over 2.7kb smaller. Compressed it is 860 bytes! Over 3.7kb smaller than the compressed image! And there is room for improvement in file size.
 
 The one big draw back to GitForker is that the font used isn't the same as the GitHub Ribbons, they use [Collegiate](http://www.fontriver.com/font/collegiate/) and GitForker uses `font-family: Geneva, sans-serif;`. This also means you can easilly customize GitForker to suit your project. Including the Collegiate font for a few words would not be good for the payload.
 

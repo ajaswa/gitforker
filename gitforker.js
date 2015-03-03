@@ -33,8 +33,7 @@
                       "background:"+bg+";"+
                       "text-decoration:none;"+
                       "color:"+fg+";"+
-                      "font-family:Geneva,sans-serif;"+
-                      "font-size:16px;"+
+                      "font: 16px/1.4 Geneva,sans-serif;"+
                       "box-shadow:0px 0px 5px "+bg+";",
         styleSpan = "display:block;"+
                     "height:30px;"+
@@ -45,15 +44,14 @@
                     "border-right:0;"+
                     "text-align:center;";
 
-    if (!ds.url) {
-      return;
-    }
-    a.setAttribute('style', styleAnchor);
-    a.setAttribute('href', ds.url);
-    s.setAttribute('style', styleSpan);
+    if (ds.url) {
+      a.setAttribute('style', styleAnchor);
+      a.setAttribute('href', ds.url);
+      s.setAttribute('style', styleSpan);
 
-    s.appendChild(text);
-    a.appendChild(s);
-    d.body.appendChild(a);
+      s.appendChild(text);
+      a.appendChild(s);
+      d.body.appendChild(a);
+    }
   })();
 })();
