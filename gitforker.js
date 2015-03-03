@@ -1,15 +1,10 @@
 /* gitforker
- * v0.0.3
+ * v0.0.4
  * Copyright 2013-2015 Andrew Jaswa
  * Adding "Fork me on GitHub" to your site without images.
  */
 
 (function () {
-  function getParameterByName(url, name) {
-    var value = url.match(new RegExp("[\?\&]" + name + "=([^\&]*)(\&?)","i"));
-    return value ? value[1] : value;
-  }
-
   function setOrientation(orientation) {
     var or = {'r': '-45deg', 'p': 'left:-50px;'};
     if (orientation === 'right') {
@@ -21,14 +16,13 @@
 
   (function () {
     var d = document,
-        paramUrl = d.getElementById('gitforker').getAttribute('src'),
+        ds = d.querySelector('#gitforker').dataset,
         a = d.createElement('a'),
         s = d.createElement('span'),
-        text = d.createTextNode(getParameterByName(paramUrl, 'text') || 'Fork me on GitHub'),
-        url = getParameterByName(paramUrl, 'url'),
-        bg = getParameterByName(paramUrl, 'bg') || '#121212',
-        fg = getParameterByName(paramUrl, 'fg') || '#eee',
-        or = setOrientation(getParameterByName(paramUrl, 'orientation') || 'left'),
+        text = d.createTextNode(ds.text || 'Fork me on GitHub'),
+        bg = ds.bg || '#121212',
+        fg = ds.fg || '#eee',
+        or = setOrientation(ds.orientation || 'left'),
         styleAnchor = "-webkit-transform:rotate("+or['r']+");"+
                       "transform:rotate("+or['r']+");"+
                       "position:fixed;"+
@@ -51,11 +45,11 @@
                     "border-right:0;"+
                     "text-align:center;";
 
-    if (!url) {
+    if (!ds.url) {
       return;
     }
     a.setAttribute('style', styleAnchor);
-    a.setAttribute('href', url);
+    a.setAttribute('href', ds.url);
     s.setAttribute('style', styleSpan);
 
     s.appendChild(text);
