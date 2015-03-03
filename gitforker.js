@@ -28,7 +28,7 @@
         url = getParameterByName(paramUrl, 'url'),
         bg = getParameterByName(paramUrl, 'bg') || '#121212',
         fg = getParameterByName(paramUrl, 'fg') || '#eee',
-        or = setOrientation(getParameterByName(url, 'orientation') || 'left'),
+        or = setOrientation(getParameterByName(paramUrl, 'orientation') || 'left'),
         styleAnchor = "-webkit-transform:rotate("+or['r']+");"+
                       "transform:rotate("+or['r']+");"+
                       "position:fixed;"+
