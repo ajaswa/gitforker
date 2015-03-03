@@ -22,7 +22,7 @@
         text = d.createTextNode(ds.text || 'Fork me on GitHub'),
         bg = ds.bg || '#121212',
         fg = ds.fg || '#eee',
-        or = setOrientation(ds.orientation || 'left'),
+        or = setOrientation(ds.or || 'left'),
         styleAnchor = "-webkit-transform:rotate("+or['r']+");"+
                       "transform:rotate("+or['r']+");"+
                       "position:fixed;"+
