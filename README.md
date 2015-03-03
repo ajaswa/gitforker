@@ -23,6 +23,9 @@ Using images for "Fork me on GitHub" is lame.
   - `fg` -
     Foreground color of the banner.
     Deafult: `#eeeeee`
+  - `text` -
+    Text of the banner.
+    Deafult: `Fork me on GitHub`
 
 
 ## Rationale
