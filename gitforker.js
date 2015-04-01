@@ -1,38 +1,34 @@
 /* gitforker
  * v0.0.6
  * Copyright 2013-2015 Andrew Jaswa
- * Adding "Fork me on GitHub" to your site without images.
+ * Adding 'Fork me on GitHub' to your site without images.
  */
 
 (function () {
   var d = document,
       ds = d.querySelector('#gitforker').dataset,
-      bg = ds.bg || '#121212',
+      bg = ds.bg || '#111',
       fg = ds.fg || '#eee',
-      r = ds.or === 'right' ? '45deg' : '-45deg',
       p = ds.or || 'left',
+      r = p === 'left' ? '-' : '',
       a = d.createElement('a'),
       s = d.createElement('span'),
+      ro = 'transform:rotate('+r+'45deg);',
       styleAnchor = p+':-50px;'+
-                    "-webkit-transform:rotate("+r+");"+
-                    "transform:rotate("+r+");"+
-                    "background:"+bg+";"+
-                    "color:"+fg+";"+
-                    "box-shadow:0px 0px 5px "+bg+";"+
-                    "position:fixed;"+
-                    "top:50px;"+
-                    "text-decoration:none;"+
-                    "padding: 2px 0;"+
-                    "display:block;"+
-                    "font: 16px Geneva,sans-serif;",
-      styleSpan = "border:1px dashed "+fg+";"+
-                  "display:block;"+
-                  "height:30px;"+
-                  "line-height:30px;"+
-                  "width:240px;"+
-                  "border-left:0;"+
-                  "border-right:0;"+
-                  "text-align:center;";
+                    '-webkit-'+ro+ro+
+                    'background:'+bg+';'+
+                    'color:'+fg+';'+
+                    'box-shadow:0 0 5px '+bg+';'+
+                    'position:fixed;'+
+                    'top:50px;'+
+                    'text-decoration:none;'+
+                    'font:16px Geneva,sans-serif;',
+      styleSpan = 'border:1px dashed '+fg+';'+
+                  'display:block;'+
+                  'line-height:30px;'+
+                  'width:240px;'+
+                  'margin:2px;'+
+                  'text-align:center;';
 
   if (ds.url) {
     a.setAttribute('href', ds.url);
