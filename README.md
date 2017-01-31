@@ -6,8 +6,9 @@ Using images for "Fork me on GitHub" is lame.
 
 
 ## Use
+Add this to the bottom of your `<body>` element.
 
-    <script id='gitforker' src='gitforker.min.js' data-url='https://github.com/ajaswa/gitforker'></script>
+    <script id='gitforker' src='https://cdn.rawgit.com/ajaswa/gitforker/master/gitforker.min.js' data-url='https://github.com/ajaswa/gitforker'></script>
 
 ### Data Options
 Set via data attributes on the script tag.
