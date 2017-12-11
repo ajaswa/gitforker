@@ -21,13 +21,13 @@ Set via data attributes on the script tag.
     Default: `left`
   - `bg` -
     Background color of the banner.
-    Deafult: `#121520`
+    Default: `#121520`
   - `fg` -
     Foreground color of the banner.
-    Deafult: `#eeeeee`
+    Default: `#eeeeee`
   - `text` -
     Text of the banner.
-    Deafult: `Fork me on GitHub`
+    Default: `Fork me on GitHub`
 
 
 ## Rationale
